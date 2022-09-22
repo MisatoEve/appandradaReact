@@ -1,11 +1,15 @@
-import './Navbar.css'
-import CartWidget from '../CartWidget/CartWidget'
+import './Navbar.css';
+import CartWidget from '../CartWidget/CartWidget';
 
 const Navbar = () => {
     return (
         <nav style={{ display: 'flex', justifyContent: 'space-around' }}>
             <div>
-                <h1>Ecommerce de MisatoEve</h1>
+                <h1 
+                style={{ 
+                    backgroundColor: 'green',
+                    color: 'white'
+                }} >Ecommerce de MisatoEve</h1>
             </div>
             <div>
                 <button>Tablets</button>
@@ -16,6 +20,8 @@ const Navbar = () => {
             </div>
             <div>
                 <CartWidget />
+                <span className="icons__li p-2 fs-4">
+                </span>
             </div>
         </nav>
     )

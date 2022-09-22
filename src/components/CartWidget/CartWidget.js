@@ -2,7 +2,7 @@ import cart from './assets/cartr1.jpg'
 
 const CartWidget = () => {
     return (
-        <div>
+        <div className="cart__count">
             <img src={cart} alt='cart'/>
             3
         </div>
