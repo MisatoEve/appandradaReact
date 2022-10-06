@@ -1,22 +1,23 @@
 import './Navbar.css';
 import CartWidget from '../CartWidget/CartWidget';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     return (
-        <nav style={{ display: 'flex', justifyContent: 'space-around' }}>
-            <div>
+        <nav className='header' style={{ display: 'flex', justifyContent: 'space-around' }}>
+            <div className='header__titulo'>
                 <h1 
-                style={{ 
+                /*</div>style={{ 
                     backgroundColor: 'green',
                     color: 'white'
-                }} >Ecommerce de MisatoEve</h1>
+                }}*/ >Ecommerce de MisatoEve</h1>
             </div>
             <div>
-                <button>Tablets</button>
-                <button>Televisores</button>
-                <button>Celulares</button>
-                <button>Notebooks</button>
-                <button>Cámaras</button>
+                <Link to={`/category/tablet`} className='header__nav--li'>Tablets</Link>
+                <Link to={`/category/televisores`} className='header__nav--li'>Televisores</Link>
+                <Link to={`/category/celular`} className='header__nav--li'>Celulares</Link>
+                <Link to={`/category/notebook`} className='header__nav--li'>Notebooks</Link>
+                <Link to={`/category/camaras`} className='header__nav--li'>Cámaras</Link>
             </div>
             <div>
                 <CartWidget />

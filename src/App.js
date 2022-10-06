@@ -1,11 +1,11 @@
 import './App.css';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 //import AvatarJsx from './components/AvatarJsx';
 //import Button from './components/Button/Button'; 
-//import Counter from './components/Counter/Counter';
-
+import Counter from './components/Counter/Counter';
 import Navbar from './components/Navbar/Navbar';
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 function App() {
 
@@ -15,6 +15,14 @@ function App() {
 
   return (
     <div className="App">
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path='/' element={<ItemListContainer greeting={'Estos son nuestros productos disponibles!! ^^'}/>}/>
+          <Route path='/category/:categoryId' element={<ItemListContainer />} />
+          <Route path='/detail/:productId' element={<ItemDetailContainer />}/>            
+        </Routes>  
+      </BrowserRouter>
       {/* <header className="App-header">*/}
         {/* <img src={logo} className="App-logo" alt="logo" />
         <AvatarJsx />
@@ -24,9 +32,7 @@ function App() {
       <button>boton</button> 
       <input /> */}       
       {/* </header>*/}
-      {/*  <Counter /> */}
-        <Navbar />
-        <ItemListContainer greeting={'Estos son nuestros productos disponibles!! ^^'}/>
+      <Counter /> 
     </div>
   );
 }
